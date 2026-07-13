@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오희은 | RECO 고객사 운영 관리 담당자 포트폴리오</title>
+<meta name="description" content="여러 시스템과 이해관계자 사이에서 누락과 불일치를 찾아 사실관계를 맞추고, 처리 완료까지 관리해온 운영 데이터 검수 담당자">
+<style>
+  :root{
+    --ink:#171717;
+    --sub:#4b4b4b;
+    --muted:#757575;
+    --line:#dedede;
+    --soft:#f6f6f5;
+    --charcoal:#282d32;
+    --charcoal-soft:#eeeeee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:Pretendard,"Pretendard Variable","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;
+    color:var(--ink);background:#fff;font-size:15.5px;line-height:1.75;
+    word-break:keep-all;overflow-wrap:break-word;
+  }
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+  section{padding:72px 0;}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:960px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .nav-logo{font-size:14px;font-weight:800;letter-spacing:-.01em;white-space:nowrap;}
+  .nav-links{display:flex;gap:22px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .nav-links a{font-size:13px;font-weight:700;color:var(--muted);white-space:nowrap;padding:2px 0;}
+  .nav-links a:hover{color:var(--ink);}
+
+  /* HERO */
+  .hero{padding:60px 0 66px;border-top:5px solid var(--charcoal);}
+  .hero-tag{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;}
+  .hero-tag:before{content:"";width:7px;height:7px;background:var(--charcoal);display:inline-block;}
+  .hero h1{font-size:38px;font-weight:800;letter-spacing:-.03em;margin-bottom:20px;}
+  .hero-message{font-size:19px;font-weight:800;line-height:1.65;color:var(--ink);border-left:3px solid var(--charcoal);padding-left:18px;margin-bottom:18px;max-width:600px;}
+  .hero-role{font-size:14px;color:var(--sub);line-height:1.85;max-width:600px;margin-bottom:26px;}
+  .hero-lead{font-size:13.8px;color:var(--sub);line-height:1.95;max-width:640px;background:var(--soft);border:1px solid var(--line);padding:18px 20px;}
+
+  /* SECTION HEAD */
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+  .sec-title{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.4;margin-bottom:32px;display:flex;align-items:center;gap:9px;}
+  .sec-title:before{content:"";width:9px;height:9px;background:var(--charcoal);display:inline-block;flex-shrink:0;}
+
+  /* ROLE FIT */
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .fit-card{border:1px solid var(--line);padding:22px 24px;}
+  .fit-card h3{font-size:15px;font-weight:800;margin-bottom:9px;letter-spacing:-.01em;}
+  .fit-card p{font-size:13.5px;color:var(--sub);line-height:1.75;}
+
+  /* KEY RESULTS */
+  .results-section{background:var(--charcoal);padding:72px 0;}
+  .results-section .eyebrow{color:rgba(255,255,255,.5);}
+  .results-section .sec-title{color:#fff;}
+  .results-section .sec-title:before{background:#fff;}
+  .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .result-card{background:#34383e;padding:22px 18px;text-align:center;}
+  .result-n{font-size:24px;font-weight:800;color:#fff;line-height:1.1;margin-bottom:9px;}
+  .result-t{font-size:12.8px;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.4;}
+  .result-d{font-size:11px;color:rgba(255,255,255,.55);line-height:1.5;}
+
+  /* CASE STUDY (shared: full-body cases + modal content) */
+  .case-no{font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--muted);margin-bottom:10px;}
+  .case-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;}
+  .case-tag{font-size:11px;font-weight:700;color:var(--ink);background:var(--soft);border:1px solid var(--line);padding:4px 11px;}
+  .case-role{font-size:12.8px;color:var(--sub);background:var(--soft);border-left:3px solid var(--charcoal);padding:11px 15px;margin-bottom:18px;line-height:1.7;}
+  .case-role b{color:var(--ink);}
+  .case-lede{font-size:13.8px;font-weight:700;color:var(--ink);line-height:1.75;margin-bottom:22px;}
+  .case-block{margin-bottom:22px;}
+  .case-block h4{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+  .case-block > p{font-size:13.8px;color:var(--sub);line-height:1.85;}
+  .step-list{margin-top:4px;}
+  .step{display:flex;gap:12px;margin-bottom:11px;align-items:flex-start;}
+  .step:last-child{margin-bottom:0;}
+  .step-badge{flex-shrink:0;width:20px;height:20px;background:var(--charcoal);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+  .step-body{font-size:13.5px;color:var(--sub);line-height:1.75;}
+  .step-body h5{font-size:13.8px;font-weight:800;color:var(--ink);margin-bottom:4px;}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0 4px;padding:16px;background:var(--soft);border:1px solid var(--line);}
+  .flow-step{font-size:12px;font-weight:700;background:#fff;border:1px solid var(--line);padding:7px 11px;}
+  .flow-arrow{color:var(--muted);font-size:12px;}
+  .result-box{background:var(--charcoal-soft);border-left:3px solid var(--charcoal);padding:15px 18px;margin:16px 0;}
+  .result-box p{font-size:13.5px;color:var(--ink);line-height:1.8;}
+  .result-box b{color:var(--charcoal);}
+  .apply-line{font-size:13.2px;color:var(--sub);border-top:1px dashed var(--line);padding-top:16px;margin-top:20px;line-height:1.8;}
+
+  /* EVIDENCE SHOT (real screenshots) */
+  .evidence{margin:20px 0;}
+  .evidence-label{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .evidence img{width:100%;display:block;border:1px solid var(--line);}
+  .evidence-cap{font-size:12.5px;color:var(--sub);line-height:1.7;margin-top:8px;}
+  .evidence-cap .title{font-weight:800;color:var(--ink);display:block;margin-bottom:3px;}
+  .evidence-cap .note{font-size:11px;color:var(--muted);}
+
+  /* SUB CASE (auxiliary case nested inside a modal) */
+  .sub-case{border-top:1px dashed var(--line);margin-top:24px;padding-top:20px;}
+  .sub-case-label{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .sub-case h5{font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px;}
+  .sub-case p{font-size:13px;color:var(--sub);line-height:1.8;}
+  .sub-case p b{color:var(--charcoal);}
+
+  /* CASE FULL (Case 01 / 02 — shown inline, no modal) */
+  .case-full{border-top:1.5px solid var(--ink);padding-top:28px;}
+  .case-full + .case-full{margin-top:56px;}
+  .case-full h3{font-size:20px;font-weight:800;line-height:1.5;letter-spacing:-.01em;margin-bottom:16px;}
+
+  /* CASE GRID (Case 03 / 04 — card + modal) */
+  .case-subhead{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:52px 0 16px;padding-top:24px;border-top:1px solid var(--line);}
+  .case-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .case-card{border:1px solid var(--line);padding:24px 22px;cursor:pointer;transition:box-shadow .15s,border-color .15s;background:#fff;display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;width:100%;}
+  .case-card:hover{box-shadow:0 6px 18px rgba(0,0,0,.08);border-color:#b7b7b7;}
+  .case-card:focus-visible{outline:2px solid var(--charcoal);outline-offset:2px;}
+  .case-card h3{font-size:16px;font-weight:800;line-height:1.5;margin:2px 0 12px;letter-spacing:-.01em;}
+  .case-card .blurb{font-size:12.8px;color:var(--sub);line-height:1.75;margin-bottom:16px;flex:1;}
+  .case-card-foot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px solid var(--line);padding-top:13px;}
+  .case-card-foot .summary{font-size:12px;font-weight:800;color:var(--ink);}
+  .case-more{font-size:12.5px;font-weight:700;color:var(--muted);white-space:nowrap;}
+
+  /* IMPROVEMENT MINI-CASES (CRM / cart) */
+  .improve-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .improve-card{border:1px solid var(--line);padding:20px 22px;}
+  .improve-card .num{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.08em;margin-bottom:9px;}
+  .improve-card h4{font-size:14.5px;font-weight:800;margin-bottom:8px;letter-spacing:-.01em;}
+  .improve-card p{font-size:12.8px;color:var(--sub);line-height:1.75;}
+
+  /* MODAL */
+  .modal-overlay{position:fixed;inset:0;background:rgba(23,23,23,.65);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:40px 20px;overflow:hidden;}
+  .modal-overlay.open{display:flex;}
+  .modal-card{background:#fff;max-width:720px;width:100%;margin:0 auto;overflow-x:hidden;overflow-y:auto;max-height:calc(100vh - 80px);}
+  .modal-head{background:var(--charcoal);padding:24px 30px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;position:sticky;top:0;z-index:2;}
+  .modal-head .case-no{color:rgba(255,255,255,.55);margin-bottom:8px;}
+  .modal-head h2{font-size:18px;font-weight:800;color:#fff;line-height:1.5;letter-spacing:-.01em;}
+  .modal-close{flex-shrink:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);color:#fff;font-size:15px;border:none;cursor:pointer;font-family:inherit;}
+  .modal-close:hover{background:rgba(255,255,255,.28);}
+  .modal-body{padding:28px 30px 36px;}
+
+  /* REPEAT WORK */
+  .repeat-box{border:1px solid var(--line);padding:26px 26px 24px;background:var(--soft);}
+  .repeat-box h3{font-size:16px;font-weight:800;margin-bottom:12px;letter-spacing:-.01em;}
+  .repeat-box > p{font-size:13.6px;color:var(--sub);line-height:1.85;margin-bottom:18px;}
+  .repeat-box > p b{color:var(--ink);}
+  .repeat-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .repeat-item{background:#fff;border:1px solid var(--line);padding:15px 16px;}
+  .repeat-item .tool{font-size:12.8px;font-weight:800;margin-bottom:7px;color:var(--charcoal);}
+  .repeat-item p{font-size:12.5px;color:var(--sub);line-height:1.65;}
+
+  /* WORK STYLE / APPLY */
+  .apply-table{border-top:1.5px solid var(--ink);margin-bottom:20px;}
+  .apply-row{display:grid;grid-template-columns:32px 150px 1fr;gap:16px;padding:15px 2px;border-bottom:1px solid var(--line);align-items:start;}
+  .apply-row .num{font-weight:800;font-size:14px;color:var(--charcoal);}
+  .apply-row .label{font-weight:800;font-size:13.8px;padding-top:1px;}
+  .apply-row .items{font-size:12.6px;color:var(--sub);line-height:1.9;}
+  .apply-quote{font-size:13.6px;color:var(--sub);line-height:1.9;border-left:3px solid var(--charcoal);padding:2px 0 2px 18px;}
+  .apply-quote b{color:var(--ink);}
+
+  /* SKILLS */
+  .skills-table{border-top:1.5px solid var(--ink);}
+  .skills-row{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--line);}
+  .skills-row .label{font-weight:800;font-size:13px;background:var(--soft);padding:12px 14px;}
+  .skills-row .value{font-size:13px;color:var(--sub);padding:12px 14px;line-height:1.8;}
+  .skills-row.ai .label{color:var(--muted);font-weight:700;}
+  .skills-row.ai .value{font-size:12px;color:var(--muted);}
+
+  /* FOOTER / CONTACT */
+  footer{border-top:1px solid var(--line);padding:44px 0;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+  footer .name{font-size:18px;font-weight:800;margin-bottom:5px;}
+  footer .role{font-size:12.5px;color:var(--muted);margin-bottom:9px;}
+  footer .info{font-size:13.5px;color:var(--sub);}
+  footer .mail-btn{padding:11px 22px;background:var(--charcoal);color:#fff;font-weight:700;font-size:13px;}
+  footer .mail-btn:hover{opacity:.85;}
+
+  @media (max-width:760px){
+    .hero h1{font-size:30px;}
+    .hero-message{font-size:16.5px;}
+    .fit-grid,.results-grid,.repeat-list,.case-grid,.improve-grid{grid-template-columns:1fr 1fr;}
+    .apply-row{grid-template-columns:26px 1fr;}
+    .apply-row .label{grid-column:2/3;}
+    .apply-row .items{grid-column:1/3;padding-left:26px;}
+    .skills-row{grid-template-columns:1fr;}
+    .skills-row .label{padding-bottom:6px;}
+    section{padding:48px 0;}
+    .results-section{padding:48px 0;}
+    .modal-overlay{padding:16px;}
+    .modal-head,.modal-body{padding-left:20px;padding-right:20px;}
+    .modal-card{max-height:calc(100vh - 32px);}
+  }
+  @media (max-width:520px){
+    .fit-grid,.results-grid,.repeat-list,.case-grid,.improve-grid{grid-template-columns:1fr;}
+  }
+
+  @page{size:A4;margin:14mm;}
+  @media print{
+    nav{position:static;}
+    .hero{padding-top:14px;border-top-width:4px;}
+    section{padding:26px 0;}
+    .results-section{padding:26px 0;}
+    .fit-card,.result-card,.repeat-item,.improve-card{page-break-inside:avoid;break-inside:avoid;}
+    .nav-links a{color:#000;}
+    body{font-size:11.5pt;}
+    .case-grid{display:none;}
+    .case-subhead{display:none;}
+    .modal-overlay{position:static !important;display:block !important;background:none;padding:0;inset:auto;}
+    .modal-card{max-height:none;overflow:visible;box-shadow:none;max-width:100%;margin:14px 0 30px;border:1px solid var(--line);page-break-inside:auto;break-inside:auto;}
+    .modal-head{position:static;background:var(--charcoal-soft);}
+    .modal-head h2{color:var(--ink);}
+    .modal-head .case-no{color:var(--muted);}
+    .modal-close{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">오희은 · RECO 지원 포트폴리오</div>
+    <div class="nav-links">
+      <a href="#intro">소개</a>
+      <a href="#fit">직무 적합성</a>
+      <a href="#cases">주요 사례</a>
+      <a href="#workstyle">업무 방식</a>
+      <a href="#contact">연락처</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 01. HERO -->
+<div class="hero" id="intro">
+  <div class="wrap">
+    <div class="hero-tag">RECO · 고객사 운영 관리 담당자 지원</div>
+    <h1>오희은</h1>
+    <p class="hero-message">여러 시스템과 이해관계자 사이에서<br>누락과 불일치를 찾아 사실관계를 맞추고,<br>처리 완료까지 관리해왔습니다.</p>
+    <p class="hero-role">출고·미출·송장 데이터가 실제 고객 안내와 후속 처리로 이어지는지 확인하고, 누락·미연결 구간은 유관부서와 조정했습니다. 반복되는 검수·입력 구간은 기준과 도구로 정리했습니다.</p>
+    <p class="hero-lead">초록마을에서는 3PL 전환 초기 미출 리스트 미공유, 주문번호·송장번호 미연결, 회원코드 미노출 등 운영에 필요한 데이터 공백을 확인하고, 임시 조회 방식과 후속 처리 기준을 정리했습니다. 반복 입력 구간은 자동화해 제품 기준 1,151품목의 재배송 전산 처리를 완료했습니다. 카카오VX에서는 400여 곳 제휴 골프장의 운영 정보를 전수 검수하고, 누락되거나 불명확한 내용은 제휴사에 전화로 확인해 보완했습니다.</p>
+  </div>
+</div>
+
+<!-- 02. ROLE FIT -->
+<section id="fit">
+  <div class="wrap">
+    <div class="eyebrow">Role Fit</div>
+    <h2 class="sec-title">직무 적합성</h2>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <h3>운영 데이터 검수·정합성</h3>
+        <p>출고·미출 리스트, 주문번호·송장번호 연결 여부, 회원코드 노출 여부와 제휴사 운영정보를 확인해 누락·미연결·불명확 항목을 식별했습니다.</p>
+      </div>
+      <div class="fit-card">
+        <h3>운영 이슈 트래킹</h3>
+        <p>출고 가능 여부와 고객 요청에 따라 지연 안내·재배송·취소 기준을 구분하고, 미확정 건의 확인 시점과 잔여 처리 물량을 후속 관리했습니다.</p>
+      </div>
+      <div class="fit-card">
+        <h3>유관부서·외부 이해관계자 커뮤니케이션</h3>
+        <p>택배사·3PL·제휴사와 품질·상품·개발·재무 담당자 사이에서 사실관계와 처리 기준을 확인하고, 수정이 필요한 건은 근거와 함께 재검토를 요청했습니다.</p>
+      </div>
+      <div class="fit-card">
+        <h3>운영정책·매뉴얼·교육</h3>
+        <p>반복되는 이슈를 SOP, 체크리스트, 에스컬레이션 기준, 온보딩 자료로 정리해 담당자별 판단 차이를 줄였습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03. KEY RESULTS -->
+<div class="results-section">
+  <div class="wrap">
+    <div class="eyebrow">Key Results</div>
+    <h2 class="sec-title">주요 성과</h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-n">1,151품목</div>
+        <div class="result-t">대량 재배송 전산 처리</div>
+        <div class="result-d">반복 입력 자동화 · 잔여 취소 물량 관리</div>
+      </div>
+      <div class="result-card">
+        <div class="result-n">400여 곳</div>
+        <div class="result-t">제휴 정책 정보 전수 검수</div>
+        <div class="result-d">누락 정보 전화 확인 · 확인 순서 표준화</div>
+      </div>
+      <div class="result-card">
+        <div class="result-n">약 14.7배</div>
+        <div class="result-t">월 배상 회수액</div>
+        <div class="result-d">기준 재정렬 이후 전년 동월 대비</div>
+      </div>
+      <div class="result-card">
+        <div class="result-n">최대 7→1단계</div>
+        <div class="result-t">반품·재배송 처리 동선 축소</div>
+        <div class="result-d">대량 대응 후 일상 운영에 상시 적용</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 04-07. CASE STUDIES -->
+<section id="cases">
+  <div class="wrap">
+    <div class="eyebrow">Case Study</div>
+    <h2 class="sec-title">주요 사례</h2>
+
+    <!-- CASE 01 (full, inline) -->
+    <div class="case-full">
+      <div class="case-no">CASE 01</div>
+      <div class="case-tags"><span class="case-tag">운영 데이터 공백 대응</span><span class="case-tag">유관부서 협의</span><span class="case-tag">대량 처리 자동화</span></div>
+      <h3>3PL 전환 초기 출고 데이터 공백 대응 및 1,151품목 재배송 처리</h3>
+      <div class="case-role"><b>내 역할</b> · 출고·미출 현황 확인, 고객 안내·취소·재배송 기준 정리, 데이터 누락 구간 식별, 물류·EC·정보전략·개발 담당자 협의, 임시 조회 구조 운영, 반복 입력 자동화 및 후속 물량 관리</div>
+      <p class="case-lede">미출 리스트·송장번호·회원코드가 실제 후속 업무에 연결되지 않는 구간을 확인하고, 임시 조회 방식과 시스템 개선 요청을 병행하며 제품 기준 1,151품목의 재배송 전산 처리를 완료했습니다.</p>
+
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>3PL 전환 초기 출고 일정과 실제 전산 정보가 안정적으로 연결되지 않았습니다. 미출 주문이 정확한 리스트로 사전 공유되지 않거나 송장번호가 주문 데이터와 연결되지 않아 고객과 내부 담당자가 배송 상태를 확인하기 어려웠습니다. CRM 출고리스트에는 보상 대상 가공에 필요한 회원코드가 없어 주문별 개별 조회가 필요했고, 대량 재배송 또한 일괄 처리 기능이 없어 수기 처리 부담이 큰 상황이었습니다.</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Action</h4>
+        <div class="step-list">
+          <div class="step"><div class="step-badge">1</div><div class="step-body"><h5>출고 상황별 처리 기준 정리</h5>도착희망일과 출고 가능 여부, 고객 요청에 따라 지연 안내·재배송·취소 기준을 구분했습니다. 출고 여부가 확정되지 않은 주문은 안내를 보류하고, 확정 시점과 후속 처리 일정을 담당자에게 재확인했습니다.</div></div>
+          <div class="step"><div class="step-badge">2</div><div class="step-body"><h5>운영에 필요한 데이터 누락 구간 확인</h5>미출 리스트 미공유, 송장번호 미연결, 회원코드 미노출로 인해 발생하는 운영 부담을 확인하고, 각 데이터가 필요한 업무와 후속 영향을 정리해 유관부서에 공유했습니다.</div></div>
+          <div class="step"><div class="step-badge">3</div><div class="step-body"><h5>후속 영향을 고려해 처리 방안 변경</h5>전체 미출 처리가 재배송 프로세스에도 영향을 줄 수 있음을 확인한 뒤 요청을 보류하고, 보상 대상 가공에 필요한 회원코드를 CRM 출고리스트에 직접 노출하는 방식으로 대안을 전환했습니다.</div></div>
+          <div class="step"><div class="step-badge">4</div><div class="step-body"><h5>시스템 정상화 전 임시 운영방안 적용</h5>송장번호 연결이 정상화되기 전에는 3PL 파트너로부터 전달받은 운송장 엑셀을 가공해 택배사 배송조회 링크를 생성하고, 개별 배송 상태를 조회할 수 있도록 운영했습니다.</div></div>
+          <div class="step"><div class="step-badge">5</div><div class="step-body"><h5>대량 반복 처리 자동화</h5>일괄 재배송 기능이 없는 상황에서 Chrome Extension과 Google Sheets Apps Script를 연동해 반복 입력 구간을 단축하고, 제품 기준 1,151품목의 재배송 전산 처리를 완료했습니다. 처리 판단이 필요한 주문은 담당자가 직접 확인하도록 남겼습니다.</div></div>
+        </div>
+      </div>
+
+      <div class="case-block">
+        <h4>Result</h4>
+        <div class="result-box"><p>CRM 출고리스트에 <b>회원코드</b>가 추가되어 별도 어드민 조회 없이 보상 대상 자료를 가공할 수 있게 됐습니다. 송장번호 연결 전에는 운송장 파일 기반 임시 조회 방식을 운영했고, 주문번호와 송장번호가 연결되지 않은 원인을 확인해 개발·물류 담당자의 후속 조치로 연결했습니다. 반복 입력 구간을 자동화해 제품 기준 <b>1,151품목</b>의 재배송 전산 처리를 완료하고, 남은 취소 대상과 처리 일정을 다시 산정해 후속 작업을 관리했습니다. 이후에도 동일 도구를 반품·재배송 일상 업무에 상시 적용하고 있습니다.</p></div>
+
+        <div class="evidence">
+          <div class="evidence-label">실제 협업 기록 02</div>
+          <img src="images/case01-02-1151-automation.png" alt="1,151품목 재배송 처리 완료 및 자동화 적용 공유 Slack 화면">
+          <div class="evidence-cap">
+            <span class="title">1,151품목 재배송 전산 처리 완료 및 자동화 적용 공유</span>
+            Chrome Extension과 Google Sheets Apps Script를 연동해 반복 입력 구간을 단축하고, 제품 기준 1,151품목의 재배송 전산 처리를 완료했습니다. 이후 잔여 취소 대상과 처리 일정도 다시 산정해 공유했습니다.
+            <span class="note">내부 정보 비식별 처리</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="apply-line">올바로 업무에서도 인계서 필수값과 상태가 실제 후속 처리에 연결되는지 확인하고, 누락·미연결 건은 담당자 확인과 재검수 시점까지 남겨 관리하겠습니다.</p>
+    </div>
+
+    <!-- CASE 02 (full, inline) -->
+    <div class="case-full">
+      <div class="case-no">CASE 02</div>
+      <div class="case-tags"><span class="case-tag">반복 데이터 검수</span><span class="case-tag">전화 확인</span><span class="case-tag">정보 표준화</span></div>
+      <h3>400여 곳 제휴사 운영정보 전수 검수 및 누락 정보 확인</h3>
+      <div class="case-role"><b>내 역할</b> · 제휴사 정보 전수 조사, 누락·불명확 정보 전화 확인, 공통 확인 항목과 조회 순서 정리, 업데이트 기준 문서화</div>
+      <p class="case-lede">골프장마다 다르게 관리되던 예약·취소·위약 정보를 공통 항목과 조회 순서로 표준화하고, 누락된 내용은 전화로 직접 확인했습니다.</p>
+
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>카카오VX에서 제휴 골프장별 예약·취소·위약 정보가 어드민에 등록돼 있었지만, 골프장마다 정보 위치와 표현 방식이 달랐습니다. 예약실 연락처, 운영시간, 취소 가능 기한, 위약 적용 범위, 입금계좌, 동반자 제한 여부가 누락되거나 불명확한 곳도 있었습니다. 담당자가 필요한 정보를 찾는 순서도 제각각이어서 같은 문의에도 확인 시간과 판단 방식이 달라질 수 있었습니다.</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Action</h4>
+        <div class="step-list">
+          <div class="step"><div class="step-badge">1</div><div class="step-body">400여 곳의 어드민 정보를 순서대로 전수 확인</div></div>
+          <div class="step"><div class="step-badge">2</div><div class="step-body">반복 확인이 필요한 내용을 공통 항목으로 정리</div></div>
+          <div class="step"><div class="step-badge">3</div><div class="step-body">누락되거나 의미가 불명확한 내용은 골프장에 직접 전화 확인</div></div>
+          <div class="step"><div class="step-badge">4</div><div class="step-body">정보 위치와 표현 순서를 통일</div></div>
+          <div class="step"><div class="step-badge">5</div><div class="step-body">복합·예외 케이스를 FAQ와 판단 기준으로 정리</div></div>
+          <div class="step"><div class="step-badge">6</div><div class="step-body">정책 변경 시 수정해야 할 항목과 공유 방법 문서화</div></div>
+        </div>
+      </div>
+
+      <div class="case-block">
+        <h4>Result</h4>
+        <div class="result-box"><p><b>400여 곳</b> 제휴 골프장의 운영 정보를 공통 항목과 일정한 조회 순서로 정리했습니다. 누락·불명확한 내용은 제휴사에 전화로 확인해 보완했고, 담당자가 달라도 같은 순서로 정보를 확인할 수 있게 만들었습니다.</p></div>
+      </div>
+    </div>
+
+    <div class="case-subhead">그 외 사례</div>
+    <div class="case-grid">
+      <button type="button" class="case-card" onclick="openModal('m3')">
+        <div class="case-no">CASE 03</div>
+        <h3>3PL 사고·피해현황 및 정산 협의 자료 관리</h3>
+        <p class="blurb">3PL 전환 이후 발생한 출고 누락·포장 불량·파손 등 파트너 귀책 사고의 피해현황을 월별로 정리하고, 정산 협의 자료로 관리했습니다.</p>
+        <div class="case-card-foot"><span class="summary">월별 피해현황·정산 협의 자료 관리</span><span class="case-more">자세히 보기 →</span></div>
+      </button>
+
+      <button type="button" class="case-card" onclick="openModal('m4')">
+        <div class="case-no">CASE 04</div>
+        <h3>담당자가 달라도 같은 방식으로 처리하기 위한 운영 기준과 교육 자료 정리</h3>
+        <p class="blurb">조직 변동으로 타부서 지원 인력이 운영 업무에 투입된 상황에서, 확인 항목·처리 범위·이관 기준을 정리하고 처리 결과를 검수했습니다.</p>
+        <div class="case-card-foot"><span class="summary">지원 인력 처리 기준 통일·검수 체계 마련</span><span class="case-more">자세히 보기 →</span></div>
+      </button>
+    </div>
+
+    <div class="case-subhead">반복 이슈를 입력·안내 구조 개선으로 연결</div>
+    <div class="improve-grid">
+      <div class="improve-card">
+        <div class="num">01</div>
+        <h4>문의 입력 구조 개선</h4>
+        <p>자유 텍스트에 섞여 있던 환불·교환 의도를 선택값으로 분리하고, 해당 값이 CRM에 노출되도록 개선했습니다. 담당자가 고객 의사를 다시 확인하거나 임의로 판단하는 과정을 줄였습니다.</p>
+      </div>
+      <div class="improve-card">
+        <div class="num">02</div>
+        <h4>장바구니 안내 구조 개선</h4>
+        <p>일 6~10건 반복되던 배송 제약 문의의 원인을 안내 구조에서 확인하고, 장바구니에서 원인 상품과 배송 가능 요일을 볼 수 있도록 개선했습니다. 반영 후 관련 문의는 0건 수준으로 감소했습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL 3 -->
+<div class="modal-overlay" id="m3" onclick="closeOnOverlay(event,'m3')" role="dialog" aria-modal="true" aria-labelledby="m3-title">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <div class="case-no">CASE 03</div>
+        <h2 id="m3-title">3PL 사고·피해현황 및 정산 협의 자료 관리</h2>
+      </div>
+      <button type="button" class="modal-close" onclick="closeModal('m3')" aria-label="닫기">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="case-tags"><span class="case-tag">사고·피해현황 관리</span><span class="case-tag">정산 협의</span><span class="case-tag">물류 파트너 커뮤니케이션</span></div>
+      <div class="case-role"><b>내 역할</b> · 3PL 사고·피해 유형 분류, 월별 피해현황 정리, 물류 계약 조항 확인, 물류 담당자 정산 협의</div>
+
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>3PL 전환 이후 출고 누락·포장 불량·파손 등 파트너 귀책 가능 사고가 발생했지만, 회사가 먼저 처리한 환불·재배송·보상 비용을 어떤 기준으로 정리하고 정산에 반영할지 실무 기준이 명확하지 않았습니다.</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Action</h4>
+        <div class="step-list">
+          <div class="step"><div class="step-badge">1</div><div class="step-body">월별 온라인 피해현황을 정리하고 피해 유형, 회사 선처리 비용, 차감 예정액, 확인 필요 항목을 구분</div></div>
+          <div class="step"><div class="step-badge">2</div><div class="step-body">물류 계약서 조항을 기준으로 정산 반영 가능 여부를 확인</div></div>
+          <div class="step"><div class="step-badge">3</div><div class="step-body">이견이 있는 항목은 물류 담당자와 재확인</div></div>
+        </div>
+      </div>
+
+      <div class="case-block">
+        <h4>Result</h4>
+        <div class="result-box"><p>파트너 사고 현황과 정산 검토 항목을 같은 자료에서 확인할 수 있게 했고, 월별 정산 협의 자료로 활용했습니다.</p></div>
+      </div>
+
+      <div class="sub-case">
+        <div class="sub-case-label">별도 택배사 협의 사례</div>
+        <h5>택배 사고 증빙·회수 기준 재협의</h5>
+        <p>택배사 사고 기록 유무와 상품의 안전·위생 상태에 따라 증빙·회수 기준을 구분하도록 협의했고, 이후 월 배상 회수액은 전년 동월 대비 <b>약 14.7배</b> 증가했습니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 4 -->
+<div class="modal-overlay" id="m4" onclick="closeOnOverlay(event,'m4')" role="dialog" aria-modal="true" aria-labelledby="m4-title">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <div class="case-no">CASE 04</div>
+        <h2 id="m4-title">담당자가 달라도 같은 방식으로 처리하기 위한 운영 기준과 교육 자료 정리</h2>
+      </div>
+      <button type="button" class="modal-close" onclick="closeModal('m4')" aria-label="닫기">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="case-tags"><span class="case-tag">운영정책</span><span class="case-tag">매뉴얼</span><span class="case-tag">교육·검수</span></div>
+      <div class="case-role"><b>내 역할</b> · 기존 문서와 실제 처리 사례 검토, 확인 항목·처리 순서·이관 조건 정리, 처리 방향 및 결과 검수, 온보딩 자료 제작</div>
+
+      <div class="case-block">
+        <h4>Problem</h4>
+        <p>조직 변동으로 타부서 지원 인력이 운영 업무에 투입됐습니다. 업무 경험이 다른 담당자들이 같은 이슈를 처리하면서 확인 항목, 처리 범위, 타부서 판단이 필요한 시점이 달라질 수 있었습니다.</p>
+      </div>
+
+      <div class="case-block">
+        <h4>Action</h4>
+        <div class="step-list">
+          <div class="step"><div class="step-badge">1</div><div class="step-body">기존 문서와 실제 사례를 기준으로 처리 순서 재정리</div></div>
+          <div class="step"><div class="step-badge">2</div><div class="step-body">이슈 유형별 필수 확인 항목 작성</div></div>
+          <div class="step"><div class="step-badge">3</div><div class="step-body">담당자가 직접 처리할 수 있는 범위와 타부서 판단이 필요한 범위 구분</div></div>
+          <div class="step"><div class="step-badge">4</div><div class="step-body">이관 시 함께 전달해야 할 사실관계와 증빙 항목 정리</div></div>
+          <div class="step"><div class="step-badge">5</div><div class="step-body">처리 결과를 검수하고 피드백</div></div>
+          <div class="step"><div class="step-badge">6</div><div class="step-body">FAQ, 체크리스트, 에스컬레이션 기준, 온보딩 자료로 문서화</div></div>
+        </div>
+      </div>
+
+      <div class="case-block">
+        <h4>Result</h4>
+        <div class="result-box"><p>지원 인력이 같은 확인 순서와 이관 기준을 적용할 수 있도록 운영 가이드를 정리하고 처리 결과를 검수했습니다. 담당자가 바뀌는 상황에서도 업무 기준과 후속 조치가 남도록 관리했습니다.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 08-09. WORK STYLE -->
+<section id="workstyle">
+  <div class="wrap">
+    <div class="eyebrow">Work Style</div>
+    <h2 class="sec-title">업무 방식</h2>
+
+    <div class="repeat-box">
+      <h3>반복 검수와 입력 업무를 줄이기 위한 도구 활용</h3>
+      <p>반복 업무를 직접 수행하며 오류가 발생하는 구간과 사람이 확인해야 할 구간을 구분한 뒤 도구를 적용했습니다. <b>반복 업무를 모두 자동화한 것이 아니라, 정책 판단과 예외 확인은 담당자가 검수하도록 남기고 반복 조회·입력·상태 확인 구간만 도구화했습니다.</b></p>
+      <div class="repeat-list">
+        <div class="repeat-item"><div class="tool">Chrome Extension</div><p>반복 등록 업무 최대 7단계 → 1단계 수준 축소, 반품·재배송 상시 업무에 매일 활용</p></div>
+        <div class="repeat-item"><div class="tool">Google Sheets · Apps Script</div><p>처리 상태, 미처리 건, 중복 건, 후속 일정 표시</p></div>
+        <div class="repeat-item"><div class="tool">외부 API</div><p>환불계좌의 계좌 유효성·예금주 일치 여부 사전 확인</p></div>
+      </div>
+    </div>
+
+    <div style="height:44px;"></div>
+
+    <div class="eyebrow">RECO 적용</div>
+    <h2 class="sec-title">새로운 운영 시스템을 익힐 때의 확인 순서</h2>
+    <div class="apply-table">
+      <div class="apply-row">
+        <div class="num">1</div>
+        <div class="label">정상 기준 파악</div>
+        <div class="items">필수 입력값 · 처리 기한 · 정상 상태값 · 완료 조건</div>
+      </div>
+      <div class="apply-row">
+        <div class="num">2</div>
+        <div class="label">예외 유형 구분</div>
+        <div class="items">누락 · 불일치 · 기한 초과 · 중복 · 외부 확인 필요</div>
+      </div>
+      <div class="apply-row">
+        <div class="num">3</div>
+        <div class="label">후속 조치 정의</div>
+        <div class="items">내부 담당자 확인 · 고객사 또는 외부 이해관계자 연락 · 수정 요청 · 재확인 일정</div>
+      </div>
+      <div class="apply-row">
+        <div class="num">4</div>
+        <div class="label">반복 이슈 정리</div>
+        <div class="items">체크리스트 · 이관 기준 · FAQ·매뉴얼 · 교육 자료 업데이트</div>
+      </div>
+    </div>
+    <p class="apply-quote">새로운 시스템을 익힐 때 화면 기능만 외우기보다 정상값, 예외값, 처리 기한, 완료 조건부터 확인해왔습니다. <b>올바로 업무에서도 인계서와 고객사 운영 데이터의 기준을 먼저 익히고, 누락·불일치 유형과 후속 조치가 남도록 관리하겠습니다.</b></p>
+  </div>
+</section>
+
+<!-- 10. SKILLS & CONTACT -->
+<section id="contact" style="padding-bottom:0;">
+  <div class="wrap">
+    <div class="eyebrow">Skills &amp; Tools</div>
+    <h2 class="sec-title">역량 및 도구</h2>
+    <div class="skills-table">
+      <div class="skills-row">
+        <div class="label">운영·데이터</div>
+        <div class="value">Excel · Google Sheets · CRM · 샵어드민 · 상태·이슈 관리 · 데이터 대조 및 정합성 확인</div>
+      </div>
+      <div class="skills-row">
+        <div class="label">정책·문서화</div>
+        <div class="value">SOP · 체크리스트 · 에스컬레이션 기준 · FAQ · 온보딩·교육 자료</div>
+      </div>
+      <div class="skills-row">
+        <div class="label">자동화</div>
+        <div class="value">Google Apps Script · Chrome Extension · Slack API · Zapier · VBA · 외부 예금주 조회 API</div>
+      </div>
+      <div class="skills-row">
+        <div class="label">협업</div>
+        <div class="value">전화 · 이메일 · Slack · 택배사·3PL·제휴사 · 내부 유관부서 조율</div>
+      </div>
+      <div class="skills-row ai">
+        <div class="label">업무 보조 도구</div>
+        <div class="value">ChatGPT · Claude · Gemini Pro · NotebookLM · Notion</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <div class="name">오희은</div>
+      <div class="role">RECO · 고객사 운영 관리 담당자 지원</div>
+      <div class="info">gldms1009@naver.com · 010-2357-2674</div>
+    </div>
+    <a href="mailto:gldms1009@naver.com" class="mail-btn">이메일 보내기</a>
+  </div>
+</footer>
+
+<script>
+  function openModal(id){
+    var m = document.getElementById(id);
+    if(!m) return;
+    m.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id){
+    var m = document.getElementById(id);
+    if(!m) return;
+    m.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeOnOverlay(e, id){
+    if(e.target && e.target.id === id) closeModal(id);
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.modal-overlay.open').forEach(function(m){ m.classList.remove('open'); });
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+</body>
+</html>
